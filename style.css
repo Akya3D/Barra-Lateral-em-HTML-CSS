@@ -1,0 +1,76 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: Copperplate, Papyrus, fantasy;
+    
+    background: url("fundo.jpg");
+}
+
+ul{
+    list-style: none;
+    top:70px;
+    /* o elemento absolute sempre fica solto no espaço da tag pai/elemento com position relative */
+    /* top, bottom, right e left so funcionam quando a position ta absolute */
+    position:absolute;
+    width: 100%;
+}
+
+img{
+    width: 40px;
+    border: 1px;
+
+
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+
+nav{
+    background-color: rgba(175, 255, 230, 0.476);
+    width: 350px;
+    left:-350px;
+    height: 100%;
+    position:absolute;
+
+    /* cria a animação */
+    transition: all .5s;
+}
+
+input[type="checkbox"]:checked ~ nav{
+    /* um evento ira acontecer na tag nav ao marcar o checkbox */
+    transform: translateX(350px);
+    }
+
+a{
+    /* o link ocupa 100 por cento da tag pai, que é o nav */
+    display: block; 
+    padding: 20px 5px;
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+a:hover{
+    background-color: rgb(255, 113, 113);
+    color:rgb(0, 0, 0)
+}
+
+label{
+    padding:15px;
+    /* absolute : o label do menu fica solto */
+    position:absolute;
+
+    /* o elemento fica na camada acima do outro */
+    z-index: 1;
+
+}
